@@ -1,0 +1,253 @@
+/*
+
+COLOURS:
+
+primary   : #0086DD;
+secondary : #FFCE00;
+tertiary  : #FF0000;
+
+*/
+
+@import 'https://fonts.googleapis.com/css?family=Assistant:300|Lato:100,300';
+
+@font-face {
+  font-family : 'Segoe MDL2 Assets';
+  src         : url("https://raw.githubusercontent.com/KaelWD/SCSS-MDL2-Icons/master/dist/SegoeMDL2Assets.eot?#iefix") format("embedded-opentype"),
+                url("https://raw.githubusercontent.com/KaelWD/SCSS-MDL2-Icons/master/dist/SegoeMDL2Assets.woff") format("woff"),
+                url("https://raw.githubusercontent.com/KaelWD/SCSS-MDL2-Icons/master/dist/SegoeMDL2Assets.ttf") format("truetype"),
+                url("https://raw.githubusercontent.com/KaelWD/SCSS-MDL2-Icons/master/dist/SegoeMDL2Assets.svg#SegoeMDL2Assets") format("svg");
+  font-weight : normal;
+  font-style  : normal;
+}
+
+html {
+    box-sizing : border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing : inherit;
+}
+
+body {
+    display        : flex;
+    flex-direction : column;
+    font-family    : 'Assistant', sans-serif;
+    font-weight    : 300;
+    min-height     : 100vh;
+    background     : #222;
+}
+
+/*
+    HEADINGS
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family : 'Lato', sans-serif;
+    font-weight : 600;
+    margin-top  : 0;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 3.5em;
+}
+
+h2 {
+    font-size : 2.5em;
+}
+
+h3 {
+    font-size : 1.5em;
+}
+
+/*
+    NAVBAR
+ */
+
+.main-nav {
+    position        : absolute;
+    height          : 4rem;
+    display         : flex;
+    width           : 100%;
+    justify-content : space-around;
+    transition      : all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    z-index         : 1000;
+}
+
+.main-nav__item {
+    flex            : 0 1 12rem;
+    text-decoration : none;
+    color           : rgba(255, 255, 255, 0.85);
+    font-size       : 1.5em;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    text-align      : center;
+    border          : 1px solid transparent;
+    transition      : all 200ms cubic-bezier(0.4, 0.0, 0.2, 1), border-radius 750ms 75ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.main-nav__item:hover {
+    border        : 1px solid rgba(255,255,255,0.5);
+    border-top    : 1px solid transparent;
+    background    : rgba(0,0,0,0.1);
+    border-radius : 0 0 0.5rem 0.5rem;
+    color         : #fff;
+}
+
+.main-nav__toggle {
+    display             : none;
+    background          : none;
+    border              : none;
+    outline             : none;
+    padding             : 0;
+    color               : #fff;
+    font-family         : 'Segoe MDL2 Assets', sans-serif;
+    text-rendering      : auto;
+    -webkit-user-select : none;
+    -moz-user-select    : none;
+    -ms-user-select     : none;
+    user-select         : none;
+    flex                : 0 0 4rem;
+    width               : 4rem;
+    font-size           : 2em;
+    order               : -1;
+    transition          : all 200ms cubic-bezier(0.4, 0.0, 0.2, 1)
+}
+
+.main-nav__toggle:hover {
+    background : rgba(0, 0, 0, 0.5);
+}
+
+.main-nav__toggle::before {
+    content : '\e700';
+    color   : inherit;
+}
+
+@media (min-width: 65.01em) {
+    .main-nav.is-collapsed {
+        position    : fixed;
+        top         : 0;
+        height      : 2rem;
+        background  : rgba(0, 0, 0, 0.2);
+        font-size   : 0.8em;
+        box-shadow  : 2px 2px 0.5rem rgba(0, 0, 0, 0.15);
+        will-change : transform;
+    }
+
+    .main-nav.is-collapsed .main-nav__item:hover {
+        border-radius : 0;
+        border-bottom : 1px solid transparent;
+    }
+}
+
+@media (max-width: 65em) {
+    .main-nav {
+        height         : auto;
+        flex-direction : column;
+        transition     : none;
+    }
+
+    .main-nav.is-open {
+        background : rgba(0, 0, 0, 0.5);
+        transition : all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    .main-nav__item {
+        display : none;
+        flex    : 0 0 4rem;
+        border  : none;
+    }
+
+    .main-nav__item:hover {
+        background    : rgba(0, 0, 0, 0.2);
+        border        : none;
+        border-radius : 0;
+    }
+
+    .is-open .main-nav__item {
+        display : flex;
+    }
+
+    .main-nav__toggle {
+        display : inline-block;
+    }
+}
+
+/*
+    MAIN CONTENT
+ */
+
+main {
+}
+
+.hero-wrapper {
+    background-size : cover;
+    width           : 100%;
+    height          : calc(100vh + 3rem);
+    display         : flex;
+    align-items     : flex-end;
+    position        : relative;
+    z-index         : -1;
+    overflow        : hidden;
+}
+
+.hero-wrapper::before {
+    content        : '';
+    background     : linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.1) 2rem, hsla(0,0%,0%,0) 6rem), linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.3) 6rem, hsla(0,0%,0%,0) 15rem);
+    position       : absolute;
+    width          : 100%;
+    height         : 100%;
+    pointer-events : none;
+}
+
+.hero-image {
+    position            : absolute;
+    top                 : 0;
+    left                : 0;
+    background-size     : cover;
+    background-position : center;
+    width               : 100%;
+    height              : 100%;
+    z-index             : -1;
+}
+
+.hero-title {
+    width       : 100%;
+    text-align  : center;
+    color       : #fff;
+    text-shadow : 2px 2px 0.5rem rgba(0,0,0,0.3);
+    font-size   : 5rem;
+    margin      : 6rem 0;
+    z-index     : 1;
+}
+
+
+/* Hero Images */
+
+.page--index .hero-image {
+    background-image : url(https://unsplash.it/1280/720/?random);
+}
+
+.page--save-the-children .hero-image {
+    background-image : url('../img/savethechildren-education.jpg');
+}
+
+.page--berry-street .hero-image {
+    background-image : url('../img/children-playing.jpg');
+}
+
+.page--canteen .hero-image {
+    background-image : url('../img/canteen-homepage-web-size.jpg');
+}
+
+.page--unicef .hero-image {
+    background-image : url('../img/macedonia-deskthumb.jpg');
+}

@@ -1,0 +1,111 @@
+/*
+    ORGANISATIONS
+*/
+
+body {
+    background : linear-gradient(#171717 100vh, #1f3847, #5150a5, #1b7ec0);
+}
+
+.page-content {
+    display        : flex;
+    flex-direction : column;
+}
+
+.org-blurb {
+    padding    : 1rem 2rem;
+    font-size  : 1.25rem;
+    margin-top : 4rem;
+    box-shadow : 2px 2px 1rem rgba(0, 0, 0, 0.33);
+    color      : #eee;
+}
+
+.org-blurb .section-wrapper {
+    width     : 50%;
+    min-width : 26rem;
+    position  : relative;
+}
+
+.org-blurb__logo {
+    position : absolute;
+    top      : 0;
+    left     : -5rem;
+    height   : 5rem;
+}
+
+.org-blurb:nth-of-type(2n) .org-blurb__logo {
+    left  : initial;
+    right : -5rem;
+}
+
+.org-blurb__more-info {
+    text-decoration : none;
+    color           : inherit;
+    display         : inline-block;
+    border          : 1px solid;
+    padding         : 0.25rem 0.33rem;
+}
+
+/* Save the children */
+
+.org-blurb--save-children {
+    background   : #333;
+    color        : #eee;
+    margin-right : 33.333%;
+    margin-top   : -3rem;
+}
+
+.org-blurb--save-children .section-wrapper {
+    float      : right;
+}
+
+.org-blurb--save-children h2 {
+    color      : #F00;
+    text-align : right;
+}
+
+.org-blurb--save-children .org-blurb__more-info {
+    float : right;
+}
+
+/* Berry street */
+
+.org-blurb--berry-street {
+    background  : #29526a;
+    color       : #eee;
+    margin-left : 33.333%;
+}
+
+.org-blurb--berry-street h2 {
+    color : #facf5a;
+}
+
+/* Canteen */
+
+.org-blurb--canteen {
+    background   : #7170b2;
+    margin-right : 33.333%;
+}
+
+.org-blurb--canteen .section-wrapper {
+    float      : right;
+}
+
+.org-blurb--canteen h2 {
+    color      : #8dc63f;
+    text-align : right;
+}
+
+.org-blurb--canteen .org-blurb__more-info {
+    float : right;
+}
+
+/* Unicef */
+
+.org-blurb--unicef {
+    background  : #1794e7;
+    margin-left : 33.333%;
+}
+
+.org-blurb--unicef h2 {
+    color : #ff0;
+}

@@ -1,0 +1,41 @@
+main {
+}
+
+.page-content {
+    background : #fff;
+    width      : 61.8%;
+    margin     : -3rem auto 0;
+    font-size  : 1.25rem;
+    padding    : 1rem 2rem;
+    box-shadow : 2px 2px 1rem rgba(0, 0, 0, 0.33);
+    overflow   : hidden;
+}
+
+.page-content img {
+    width      : calc(100% + 4rem);
+    margin     : 2rem -2rem;
+    box-shadow : 2px 2px 1rem rgba(0, 0, 0, 0.2);
+}
+
+.page--save-the-children body {
+    background : #333;
+}
+
+.page--berry-street body {
+    background : #29526a;
+}
+
+.page--canteen body {
+    background: #6c9339;
+}
+
+.page--unicef body {
+    background: #1794e7;
+}
+
+@media (max-width: 80em) {
+    .page-content {
+        width     : 47rem;
+        max-width : 95%;
+    }
+}
