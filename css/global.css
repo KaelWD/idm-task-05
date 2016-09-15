@@ -233,7 +233,7 @@ main {
 /* Hero Images */
 
 .page--index .hero-image {
-    background-image : url(https://unsplash.it/1280/720/?random);
+    background-image : url(https://unsplash.it/1280/720/?random&blur);
 }
 
 .page--save-the-children .hero-image {
