@@ -8,7 +8,7 @@ body {
 
 .page-content {
     display        : flex;
-    flex-direction : column;
+    flex-wrap      : wrap;
 }
 
 .org-blurb {
@@ -17,24 +17,41 @@ body {
     margin-top : 4rem;
     box-shadow : 2px 2px 1rem rgba(0, 0, 0, 0.33);
     color      : #eee;
+    flex: 0 1 66.6%;
 }
 
 .org-blurb .section-wrapper {
     width     : 50%;
-    min-width : 26rem;
-    position  : relative;
+    min-width : 35rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 650px) {
+    .org-blurb {
+        flex: 1 0 100%;
+        margin-top: 2rem;
+    }
+
+    .org-blurb .section-wrapper {
+        width: 100%;
+        min-width: 100%;
+    }
 }
 
 .org-blurb__logo {
-    position : absolute;
-    top      : 0;
-    left     : -5rem;
-    height   : 5rem;
+    height: 5rem;
 }
 
 .org-blurb:nth-of-type(2n) .org-blurb__logo {
     left  : initial;
     right : -5rem;
+}
+
+.org-blurb h2 {
+    flex: 1;
+    text-align: right;
 }
 
 .org-blurb__more-info {
@@ -50,21 +67,20 @@ body {
 .org-blurb--save-children {
     background   : #333;
     color        : #eee;
-    margin-right : 33.333%;
+    margin-right : auto;
     margin-top   : -3rem;
 }
 
 .org-blurb--save-children .section-wrapper {
-    float      : right;
+    margin-left: auto;
 }
 
 .org-blurb--save-children h2 {
     color      : #F00;
-    text-align : right;
 }
 
 .org-blurb--save-children .org-blurb__more-info {
-    float : right;
+    margin-left: auto;
 }
 
 /* Berry street */
@@ -72,7 +88,7 @@ body {
 .org-blurb--berry-street {
     background  : #29526a;
     color       : #eee;
-    margin-left : 33.333%;
+    margin-left : auto;
 }
 
 .org-blurb--berry-street h2 {
@@ -83,27 +99,26 @@ body {
 
 .org-blurb--canteen {
     background   : #7170b2;
-    margin-right : 33.333%;
+    margin-right : auto;
 }
 
 .org-blurb--canteen .section-wrapper {
-    float      : right;
+    margin-left: auto;
 }
 
 .org-blurb--canteen h2 {
     color      : #8dc63f;
-    text-align : right;
 }
 
 .org-blurb--canteen .org-blurb__more-info {
-    float : right;
+    margin-left: auto;
 }
 
 /* Unicef */
 
 .org-blurb--unicef {
     background  : #1794e7;
-    margin-left : 33.333%;
+    margin-left : auto;
 }
 
 .org-blurb--unicef h2 {

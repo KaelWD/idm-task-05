@@ -229,6 +229,12 @@ main {
     z-index     : 1;
 }
 
+@media (max-width: 520px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
 
 /* Hero Images */
 
